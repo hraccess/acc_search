@@ -40,6 +40,7 @@ function acc_search_default_search_api_index() {
         "field_affected_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_bundles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_locations:field_geofield:geom" : { "type" : "list\\u003Cstring\\u003E" },
         "field_locations:field_geofield:lat" : { "type" : "list\\u003Cdecimal\\u003E" },
         "field_locations:field_geofield:lon" : { "type" : "list\\u003Cdecimal\\u003E" },
         "field_locations:parent" : {
@@ -77,11 +78,7 @@ function acc_search_default_search_api_index() {
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : { "fields" : { "field_locations:parents_all" : "field_locations:parents_all" } }
-        }
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
       },
       "processors" : {
         "search_api_case_ignore" : {
