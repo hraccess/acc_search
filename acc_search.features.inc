@@ -31,23 +31,48 @@ function acc_search_default_search_api_index() {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
+        "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_application_types:parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_date" : { "type" : "list\\u003Cdate\\u003E" },
+        "field_acc_geo_location_dest" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_acc_geo_location_dest:field_geofield:geom" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_acc_geo_location_dest:field_geofield:lat" : { "type" : "list\\u003Cdecimal\\u003E" },
+        "field_acc_geo_location_dest:field_geofield:lon" : { "type" : "list\\u003Cdecimal\\u003E" },
+        "field_acc_geo_location_dest:parent" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_acc_impacts" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts:field_acc_impact_value" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_acc_submission_status" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_submitted_by" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_acc_submitted_by_org_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_acc_type:parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organization_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_bundles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "field_date_app:value" : { "type" : "date" },
+        "field_date_app:value2" : { "type" : "date" },
+        "field_how_many_days" : { "type" : "integer" },
+        "field_if_denied_by_whom_" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_locations:field_geofield:geom" : { "type" : "list\\u003Cstring\\u003E" },
         "field_locations:field_geofield:lat" : { "type" : "list\\u003Cdecimal\\u003E" },
         "field_locations:field_geofield:lon" : { "type" : "list\\u003Cdecimal\\u003E" },
         "field_locations:parent" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
+        "field_nationality" : { "type" : "list\\u003Cstring\\u003E" },
         "field_responsible_actors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_responsible_organization_t" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_sectors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "field_submitted_to" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_type_of_affectee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "language" : { "type" : "string" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
@@ -65,7 +90,10 @@ function acc_search_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "0", "bundles" : { "acc_incident" : "acc_incident" } }
+          "settings" : {
+            "default" : "0",
+            "bundles" : { "acc_application" : "acc_application", "acc_incident" : "acc_incident" }
+          }
         },
         "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
@@ -77,11 +105,7 @@ function acc_search_default_search_api_index() {
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : { "fields" : { "field_locations:parents_all" : "field_locations:parents_all" } }
-        }
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
       },
       "processors" : {
         "search_api_case_ignore" : {
