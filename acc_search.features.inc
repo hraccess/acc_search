@@ -34,7 +34,7 @@ function acc_search_default_search_api_index() {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
-        "field_acc_date" : { "type" : "list\\u003Cdate\\u003E" },
+        "field_acc_date:value" : { "type" : "date" },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts:field_acc_impact_value" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_acc_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -132,6 +132,12 @@ function acc_search_default_search_api_index() {
             "highlight" : "always"
           }
         }
+      },
+      "sorts_widget" : {
+        "enabled" : false,
+        "title" : "",
+        "autosubmit" : false,
+        "autosubmit_hide" : false
       }
     },
     "enabled" : "1",
