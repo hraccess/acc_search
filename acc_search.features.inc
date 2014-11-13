@@ -37,8 +37,7 @@ function acc_search_default_search_api_index() {
         "field_acc_date" : { "type" : "list\\u003Cdate\\u003E" },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts:field_acc_impact_value" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_acc_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_acc_type:parent" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_acc_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organization_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_bundles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
@@ -81,7 +80,11 @@ function acc_search_default_search_api_index() {
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
+        "search_api_alter_add_hierarchy" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : { "field_acc_type:parents_all" : "field_acc_type:parents_all" } }
+        }
       },
       "processors" : {
         "search_api_case_ignore" : {
