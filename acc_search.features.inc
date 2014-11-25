@@ -51,6 +51,10 @@ function acc_search_default_search_api_index() {
         "field_acc_submitted_by" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_submitted_by_org_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_acc_type:parent" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
         "field_affected_organization_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_bundles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
