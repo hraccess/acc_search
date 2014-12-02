@@ -34,7 +34,7 @@ function acc_search_default_search_api_index() {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
-        "field_acc_application_types" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_acc_application_types" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_date:value" : { "type" : "date" },
         "field_acc_geo_location_dest" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_geo_location_dest:field_geofield:geom" : { "type" : "list\\u003Cstring\\u003E" },
@@ -95,7 +95,11 @@ function acc_search_default_search_api_index() {
         "search_api_alter_add_hierarchy" : {
           "status" : 1,
           "weight" : "0",
-          "settings" : { "fields" : { "field_acc_type:parents_all" : "field_acc_type:parents_all" } }
+          "settings" : { "fields" : {
+              "field_acc_application_types:parents_all" : "field_acc_application_types:parents_all",
+              "field_acc_type:parents_all" : "field_acc_type:parents_all"
+            }
+          }
         }
       },
       "processors" : {
